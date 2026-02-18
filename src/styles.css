@@ -7,3 +7,4 @@
 @import './styles/thems.css';
 @import './styles/base.css';
 @custom-variant dark (&:where(.dark, .dark *));
+@import './styles/toaster.css';

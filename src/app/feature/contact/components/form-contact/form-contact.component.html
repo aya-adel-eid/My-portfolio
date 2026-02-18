@@ -36,11 +36,12 @@
 
     <!-- Message -->
     <div class="flex flex-col gap-2 mb-5">
-      <label for="message" class="text-xl font-medium text-white flex items-center gap-2">
+      <label for="message" class="text-xl font-medium text-gray-800 dark:text-white flex items-center gap-2">
 
         Your Message
       </label>
-      <textarea formControlName="message" id="message" rows="5" class="dark:bg-gray-800 bg-whith border border-default-medium text-gray-100 text-lg rounded-base
+      <textarea formControlName="message" id="message" rows="5" class="dark:bg-gray-800 bg-whith border
+       border-default-medium text-gray-800 dark:text-gray-100 text-lg rounded-base
                  focus:ring-1 focus:ring-brand focus:border-brand
                  block w-full p-4 shadow-xs placeholder:text-gray-800  dark:placeholder:text-gray-100
                  resize-none transition-all duration-300" placeholder="Write your thoughts here..."></textarea>
@@ -53,7 +54,13 @@
                px-8 py-3 rounded-base
                transition-all duration-300 shadow-md hover:shadow-main-600/30">
       Send Message
+      @if(!loading){
+
       <i class="fa-solid fa-paper-plane text-xs"></i>
+      }
+      @else {
+      <span><i class=" fas fa-spin fa-spinner"></i></span>
+      }
     </button>
   </div>
 
