@@ -46,7 +46,7 @@ export const routes: Routes = [
 
       {
         path: 'lang',
-        loadChildren: () =>
+        loadComponent: () =>
           import('./feature/skills/components/language/language.component').then(
             (m) => m.LanguageComponent,
           ),
@@ -55,14 +55,14 @@ export const routes: Routes = [
 
       {
         path: 'tools',
-        loadChildren: () =>
+        loadComponent: () =>
           import('./feature/skills/components/tools/tools.component').then((m) => m.ToolsComponent),
         title: 'Tools&&platform',
       },
 
       {
         path: 'library',
-        loadChildren: () =>
+        loadComponent: () =>
           import('./feature/skills/components/library/library.component').then(
             (m) => m.LibraryComponent,
           ),
@@ -71,7 +71,7 @@ export const routes: Routes = [
 
       {
         path: 'markUp',
-        loadChildren: () =>
+        loadComponent: () =>
           import('./feature/skills/components/mark-up/mark-up.component').then(
             (m) => m.MarkUpComponent,
           ),

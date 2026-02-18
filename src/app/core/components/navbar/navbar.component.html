@@ -6,12 +6,14 @@
     </a>
     <div class="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
       <label class="inline-flex items-center cursor-pointer ps-4">
-        <span class="select-none ms-3 text-sm font-medium text-heading hidden dark:inline pe-1.5">light</span>
-        <span class="select-none ms-3 text-sm font-medium text-heading dark:hidden pe-1.5">Dark</span>
+        <span class="select-none ms-3 text-sm font-medium  hidden dark:inline pe-1.5"><i
+            class="fa-regular fa-sun fa-xl text-main-400"></i></span>
+        <span class="select-none ms-3 text-sm font-medium  dark:hidden pe-1.5"><i
+            class="fa-regular fa-moon fa-xl text-main-4"></i></span>
         <input type="checkbox" value="" class="sr-only peer" checked (click)="toggleDark()">
-        <div
+        <!-- <div
           class="relative w-9 h-5 bg-neutral-quaternary peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-soft dark:peer-focus:ring-brand-soft rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand">
-        </div>
+        </div> -->
       </label>
       <button data-collapse-toggle="navbar-sticky" type="button"
         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base lg:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
