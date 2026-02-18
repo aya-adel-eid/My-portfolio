@@ -1,65 +1,100 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './feature/home/home/home.component';
-import { AboutPageComponent } from './feature/about/about-page/about-page.component';
-import { ServicesPageComponent } from './feature/services/pages/services-page/services-page.component';
-import { SkillsPageComponent } from './feature/skills/pages/skills-page/skills-page.component';
-import { ProjectPageComponent } from './feature/projects/pages/project-page/project-page.component';
-import { ContactPagesComponent } from './feature/contact/pages/contact-pages/contact-pages.component';
-import { LanguageComponent } from './feature/skills/components/language/language.component';
-import { ToolsComponent } from './feature/skills/components/tools/tools.component';
-import { LibraryComponent } from './feature/skills/components/library/library.component';
-import { MarkUpComponent } from './feature/skills/components/mark-up/mark-up.component';
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-    title: 'home-page',
   },
+
   {
     path: 'home',
-    component: HomeComponent,
+    loadComponent: () => import('./feature/home/home/home.component').then((m) => m.HomeComponent),
     title: 'home-page',
   },
+
   {
     path: 'about',
-    component: AboutPageComponent,
+    loadComponent: () =>
+      import('./feature/about/about-page/about-page.component').then((m) => m.AboutPageComponent),
     title: 'about-page',
   },
+
   {
     path: 'services',
-    component: ServicesPageComponent,
+    loadComponent: () =>
+      import('./feature/services/pages/services-page/services-page.component').then(
+        (m) => m.ServicesPageComponent,
+      ),
     title: 'services-page',
   },
+
   {
     path: 'skills',
-    component: SkillsPageComponent,
+    loadComponent: () =>
+      import('./feature/skills/pages/skills-page/skills-page.component').then(
+        (m) => m.SkillsPageComponent,
+      ),
     title: 'skills-page',
+
     children: [
-      { path: '', redirectTo: 'lang', pathMatch: 'full', title: 'Languages&FrontEnd' },
-      { path: 'lang', component: LanguageComponent, title: 'Languages&FrontEnd' },
-      { path: 'tools', component: ToolsComponent, title: 'Tools&&platform' },
+      {
+        path: '',
+        redirectTo: 'lang',
+        pathMatch: 'full',
+      },
+
+      {
+        path: 'lang',
+        loadChildren: () =>
+          import('./feature/skills/components/language/language.component').then(
+            (m) => m.LanguageComponent,
+          ),
+        title: 'Languages&FrontEnd',
+      },
+
+      {
+        path: 'tools',
+        loadChildren: () =>
+          import('./feature/skills/components/tools/tools.component').then((m) => m.ToolsComponent),
+        title: 'Tools&&platform',
+      },
+
       {
         path: 'library',
-        component: LibraryComponent,
+        loadChildren: () =>
+          import('./feature/skills/components/library/library.component').then(
+            (m) => m.LibraryComponent,
+          ),
         title: 'Libraries',
       },
+
       {
         path: 'markUp',
-        component: MarkUpComponent,
+        loadChildren: () =>
+          import('./feature/skills/components/mark-up/mark-up.component').then(
+            (m) => m.MarkUpComponent,
+          ),
         title: 'markUp&&Styling',
       },
     ],
   },
+
   {
     path: 'projects',
-    component: ProjectPageComponent,
+    loadComponent: () =>
+      import('./feature/projects/pages/project-page/project-page.component').then(
+        (m) => m.ProjectPageComponent,
+      ),
     title: 'projects-page',
   },
+
   {
     path: 'contact',
-    component: ContactPagesComponent,
+    loadComponent: () =>
+      import('./feature/contact/pages/contact-pages/contact-pages.component').then(
+        (m) => m.ContactPagesComponent,
+      ),
     title: 'contact-page',
   },
 ];
