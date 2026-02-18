@@ -1,0 +1,23 @@
+@layer components {
+  .item-nav {
+    @apply block relative text-xl py-2 px-3 text-gray-700 dark:text-gray-300  before:content-['']
+    before:absolute before:h-0.5 before:bg-main-600 dark:before:bg-main-400 hover:text-main-600 dark:hover:text-main-400
+             before:w-0 before:-bottom-1  hover:before:w-full before:transition-all before:duration-300
+            rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-main-500 lg:p-0;
+  }
+  .input-form {
+    @apply block py-3 px-0 w-full text-sm dark:text-gray-200 text-gray-700  bg-transparent border-0 border-b-2  border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-main-500  transition-colors duration-300;
+  }
+  .label-form {
+    @apply absolute text-sm dark:text-gray-200 text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left
+    dark:peer-focus:text-white peer-focus:text-gray-800 peer-focus:font-semibold peer-focus:text-xl peer-focus:scale-75 peer-focus:-translate-y-6
+                 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+                 flex items-center gap-2;
+  }
+  .route-active {
+    @apply before:bg-main-500 before:absolute relative before:w-full before:-bottom-1 text-main-500;
+  }
+  .router-link {
+    @apply bg-main-400 text-white px-6 py-5 rounded-3xl;
+  }
+}

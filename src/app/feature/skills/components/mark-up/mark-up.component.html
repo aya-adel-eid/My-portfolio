@@ -1,0 +1,10 @@
+<div class="py-5">
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-6">
+    @for (skill of markup_Styling_arr; track $index) {
+    <div data-aos="fade-up-right" [attr.data-aos-delay]="$index*400">
+
+      <app-skill-card [skill]="skill"></app-skill-card>
+    </div>
+    }
+  </div>
+</div>

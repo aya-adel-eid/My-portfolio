@@ -1,0 +1,75 @@
+<div class="flex flex-col h-full overflow-hidden rounded-2xl group
+         transition-all duration-300
+
+         bg-white border border-gray-200 shadow-md
+         hover:shadow-lg hover:border-main-500/40
+
+         dark:bg-white/5 dark:border-white/10
+         dark:hover:bg-white/10 dark:hover:border-main-600/50">
+
+  <!-- Image -->
+  <div class="overflow-hidden">
+    <a href="#">
+      <img class="w-full h-60 object-cover
+               transition-transform duration-500
+               group-hover:scale-105" [src]="project.image" alt="Project thumbnail" />
+    </a>
+  </div>
+
+  <!-- Content -->
+  <div class="p-5 flex flex-col gap-4 flex-1">
+
+    <!-- Title -->
+    <a href="#" class="group/link">
+      <h5 class="text-lg font-semibold leading-snug transition-colors
+
+               text-main-600 group-hover/link:text-main-500
+               dark:text-main-400 dark:group-hover/link:text-main-300">
+        {{project.name}}
+      </h5>
+    </a>
+
+    <!-- Description -->
+    <p class="text-sm leading-relaxed line-clamp-2
+             text-gray-600 dark:text-gray-400">
+      {{project.description}}
+    </p>
+
+    <!-- Tech Tags -->
+    <div class="flex flex-wrap gap-2 flex-1 content-start">
+      @for (tech of project.techStack; track $index) {
+      <span class="text-xs font-medium px-3 py-1 rounded-full h-fit
+                 transition-all duration-300" [class]="tech.styles">
+        {{tech.name}}
+      </span>
+      }
+    </div>
+
+    <!-- Divider -->
+    <div class="mt-auto border-t
+             border-gray-200 dark:border-white/10">
+    </div>
+
+    <!-- Links -->
+    <div class="flex items-center justify-between">
+
+      <a [href]="project.github" class="flex items-center gap-2 text-sm
+                text-gray-600 hover:text-main-600
+                dark:text-gray-400 dark:hover:text-white
+                transition-colors">
+        <i class="fa-brands fa-github"></i>
+        GitHub
+      </a>
+
+      <a [href]="project.demo" class="flex items-center gap-2 text-sm font-medium
+                text-main-600 hover:text-main-500
+                dark:text-main-400 dark:hover:text-main-300
+                transition-colors">
+        Live Demo
+        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+      </a>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.change {
+  opacity: 1;
+  animation: changeOpacity 3s ease-in-out 2s infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes changeOpacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}

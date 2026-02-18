@@ -1,0 +1,131 @@
+<section class="relative overflow-hidden pt-35 pb-24
+                bg-gray-100 dark:bg-[#1F262F]
+                transition-colors duration-500">
+
+  <!-- Background decoration -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <div class="absolute top-1/4 right-1/4 w-96 h-96
+                bg-main-600/10 dark:bg-main-600/5
+                rounded-full blur-3xl"></div>
+
+    <div class="absolute bottom-1/4 left-1/4 w-96 h-96
+                bg-main-600/10 dark:bg-main-600/5
+                rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="container mx-auto px-8 relative z-10">
+
+    <!-- Section Header -->
+    <div class="flex flex-col items-center gap-3 mb-16" data-aos="fade-down">
+
+      <h2 class="text-4xl font-bold text-center py-8
+                 text-main-600 dark:text-main-400">
+        Contact Me
+      </h2>
+
+      <div class="w-12 h-0.5
+                  bg-main-600/60 dark:bg-main-600/40
+                  rounded-full mt-1">
+      </div>
+
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <!-- Left: Form -->
+      <div data-aos="fade-right" data-aos-delay="400" class="w-full rounded-2xl p-8 transition-all duration-300
+
+                  bg-white border border-gray-200
+                  hover:border-main-500/40 shadow-md
+
+                  dark:bg-white/5 dark:border-white/10
+                  dark:hover:border-main-600/20">
+
+        <app-form-contact></app-form-contact>
+
+      </div>
+
+      <!-- Right: Contact Info -->
+      <div class="w-full flex flex-col gap-8" data-aos="fade-left" data-aos-delay="700">
+
+        <!-- Intro Text -->
+        <div class="flex flex-col gap-4">
+
+          <h3 class="text-3xl font-bold leading-snug
+                     text-gray-900 dark:text-white">
+            Let's Talk
+          </h3>
+
+          <p class="text-lg leading-relaxed
+                    text-gray-700 dark:text-gray-300">
+            I'm always open to discussing new projects, creative ideas,
+            or opportunities to be part of your vision.
+            Feel free to reach out through any of these channels.
+          </p>
+
+        </div>
+
+        <!-- Contact Cards -->
+        <div class="flex flex-col gap-4">
+          @for (contact of arr_contact; track $index) {
+          <div data-aos="fade-up" [attr.data-aos-delay]="$index*800">
+            <app-card-contact [contact]="contact"></app-card-contact>
+          </div>
+          }
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex items-center gap-4 pt-4
+                    border-t border-gray-200 dark:border-white/10">
+
+          <span class="text-sm
+                       text-gray-600 dark:text-gray-400">
+            Connect with me:
+          </span>
+
+          <a href="https://github.com/aya-adel-eid" class="w-10 h-10 flex items-center justify-center rounded-lg
+                    transition-all duration-300
+
+                    bg-white border border-gray-200
+                    hover:bg-main-600/20 hover:border-main-600/40
+
+                    dark:bg-white/5 dark:border-white/10">
+            <i class="fa-brands fa-github
+                      text-main-600 dark:text-main-400">
+            </i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/aya-adel-a67757215/" class="w-10 h-10 flex items-center justify-center rounded-lg
+                    transition-all duration-300
+
+                    bg-white border border-gray-200
+                    hover:bg-main-600/20 hover:border-main-600/40
+
+                    dark:bg-white/5 dark:border-white/10">
+            <i class="fa-brands fa-linkedin
+                      text-main-600 dark:text-main-400">
+            </i>
+          </a>
+
+          <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg
+                    transition-all duration-300
+
+                    bg-white border border-gray-200
+                    hover:bg-main-600/20 hover:border-main-600/40
+
+                    dark:bg-white/5 dark:border-white/10">
+            <i class="fa-brands fa-twitter
+                      text-main-600 dark:text-main-400">
+            </i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

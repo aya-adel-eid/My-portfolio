@@ -1,0 +1,58 @@
+<nav
+  class="dark:bg-[#323946] bg-gray-200 shadow-xl rounded-full fixed w-[90%] mx-auto z-20 top-8 start-8 end-8 border border-main-300">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <span class="self-center text-3xl text-main-500 font-bold whitespace-nowrap">Portfolio</span>
+    </a>
+    <div class="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
+      <label class="inline-flex items-center cursor-pointer ps-4">
+        <span class="select-none ms-3 text-sm font-medium text-heading hidden dark:inline pe-1.5">light</span>
+        <span class="select-none ms-3 text-sm font-medium text-heading dark:hidden pe-1.5">Dark</span>
+        <input type="checkbox" value="" class="sr-only peer" checked (click)="toggleDark()">
+        <div
+          class="relative w-9 h-5 bg-neutral-quaternary peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-soft dark:peer-focus:ring-brand-soft rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand">
+        </div>
+      </label>
+      <button data-collapse-toggle="navbar-sticky" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base lg:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+        aria-controls="navbar-sticky" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+          viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="items-center justify-between  hidden w-full lg:flex lg:w-auto lg:order-1 absolute lg:relative top-full left-0 right-0 mt-0.5 lg:mt-0"
+      id="navbar-sticky">
+      <ul
+        class="flex flex-col p-4 lg:p-0 mt-4 lg:mt-0 font-medium border border-default rounded-base bg-white lg:bg-transparent dark:lg:bg-transparent dark:bg-gray-800 lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:border-0 ">
+        <li>
+          <a routerLink="/home" routerLinkActive="route-active" class="item-nav" aria-current="page"><span
+              class="mr-2"><i class="fa-regular fa-envelope-open"></i></span>Home</a>
+        </li>
+        <li>
+          <a routerLink="/about" routerLinkActive="route-active" class="item-nav"><span class="mr-2"><i
+                class="fa-regular fa-user"></i></span>About</a>
+        </li>
+        <li>
+          <a routerLink="services" routerLinkActive="route-active" class="item-nav"><span class="mr-2"><i
+                class="fa-solid fa-laptop"></i></span>Services</a>
+        </li>
+        <li>
+          <a routerLink="skills" routerLinkActive=" route-active" class="item-nav"><span class="mr-2"><i
+                class="fa-regular fa-lightbulb"></i></span>Skills</a>
+        </li>
+        <li>
+          <a routerLink="projects" routerLinkActive="route-active" class="item-nav"><span class="mr-2"><i
+                class="fa-solid fa-code"></i></span>Projects</a>
+        </li>
+        <li>
+          <a routerLink="contact" routerLinkActive=" route-active " class="item-nav"><span class="mr-2"><i
+                class="fa-regular fa-envelope"></i></span>Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

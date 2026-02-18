@@ -1,0 +1,50 @@
+<div class="group  flex flex-col h-full p-8 rounded-2xl cursor-pointer
+         backdrop-blur-xl transition-all duration-300
+
+         bg-white border border-gray-200 shadow-md
+         hover:shadow-lg hover:border-main-500/40
+
+         dark:bg-white/5 dark:border-white/10
+         dark:hover:bg-white/10 dark:hover:border-main-600/50">
+
+  <!-- Header -->
+  <div class="flex items-center gap-4 mb-6">
+
+    <div class="w-14 h-14 rounded-xl flex items-center justify-center
+                bg-linear-to-br" [class]="skill.styling">
+      <i class="text-white text-2xl" [class]="skill.icon"></i>
+    </div>
+
+    <h3 class="text-xl font-semibold
+               text-gray-800 dark:text-white">
+      {{skill.name}}
+    </h3>
+
+  </div>
+
+  <!-- Description -->
+  <p class="text-sm mb-4
+            text-gray-600 dark:text-gray-400">
+    {{skill.description}}
+  </p>
+
+  <!-- Progress -->
+  <div class="flex items-center gap-3 grow">
+
+    <div class="flex-1 h-2 rounded-full overflow-hidden
+                bg-gray-200 dark:bg-white/10">
+
+      <div class="h-full rounded-full bg-linear-to-r transition-all duration-700" [class]="skill.styling"
+        [style.width]="skill.styles">
+      </div>
+
+    </div>
+
+    <span class="text-sm font-medium
+                 text-gray-700 dark:text-white">
+      {{skill.styles}}
+    </span>
+
+  </div>
+
+</div>

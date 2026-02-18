@@ -1,0 +1,62 @@
+<form action="" [formGroup]="contactForm" (ngSubmit)="sendData()">
+  <h2 class="text-4xl pb-6 text-main-600 dark:text-main-400 font-bold">Get In Touch</h2>
+  <div>
+
+
+
+
+    <!-- Name -->
+    <input type="hidden" name="access_key" value="5d972dec-15f0-47f4-a5be-7540b0806513" formControlName="access_key">
+    <div class="relative z-0 w-full group mb-5">
+      <input type="text" id="name" formControlName="name" class="peer input-form" placeholder=" " />
+      <label for="name" class="label-form
+                 ">
+        <i class="fa-regular fa-user "></i>
+        Enter Your Name
+      </label>
+    </div>
+
+    <!-- Email -->
+    <div class="relative z-0 w-full group mb-5">
+      <input type="email" id="email" class="peer input-form" placeholder=" " formControlName="email" />
+      <label for="email" class="label-form">
+        <i class="fa-regular fa-envelope"></i>
+        Enter Your Email
+      </label>
+    </div>
+
+    <!-- Subject -->
+    <div class="relative z-0 w-full group mb-5">
+      <input type="text" id="subject" class="peer input-form" placeholder=" " formControlName="subject" />
+      <label for="subject" class="label-form">
+        <i class="fa-regular fa-pen-to-square "></i>
+        Subject
+      </label>
+    </div>
+
+    <!-- Message -->
+    <div class="flex flex-col gap-2 mb-5">
+      <label for="message" class="text-xl font-medium text-white flex items-center gap-2">
+
+        Your Message
+      </label>
+      <textarea formControlName="message" id="message" rows="5" class="dark:bg-gray-800 bg-whith border border-default-medium text-gray-100 text-lg rounded-base
+                 focus:ring-1 focus:ring-brand focus:border-brand
+                 block w-full p-4 shadow-xs placeholder:text-gray-800  dark:placeholder:text-gray-100
+                 resize-none transition-all duration-300" placeholder="Write your thoughts here..."></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="w-full md:w-fit md:self-end flex items-center cursor-pointer justify-center gap-2
+               bg-main-600 hover:bg-main-700 active:scale-95
+               text-white text-sm font-semibold
+               px-8 py-3 rounded-base
+               transition-all duration-300 shadow-md hover:shadow-main-600/30">
+      Send Message
+      <i class="fa-solid fa-paper-plane text-xs"></i>
+    </button>
+  </div>
+
+
+
+</form>

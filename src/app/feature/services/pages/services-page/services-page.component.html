@@ -1,0 +1,25 @@
+<section class="bg-gray-100 dark:bg-[#1F262F] min-h-screen pb-15 pt-32">
+  <div class="container mx-auto">
+    <div class="text-center">
+      <h2 class="text-4xl text-main-500 dark:text-main-400 py-8 leading-relaxed font-bold" data-aos="fade-right"
+        data-aos-delay="100">My
+        Services</h2>
+      <p class="dark:text-white text-gray-800 pt-5 text-2xl font-semibold w-[80%] mx-auto leading-relaxed"
+        data-aos="fade-up" data-aos-delay="300">Building scalable,
+        performance-driven
+        web
+        applications with
+        Angular.
+        Here are the key services I provide to help your business succeed.</p>
+    </div>
+    <div class="pt-15 px-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      @for (service of services_arr; track $index) {
+      <div data-aos="flip-right" [attr.data-aos-delay]="$index*500">
+
+        <app-service-card [service]="service"></app-service-card>
+      </div>
+      }
+    </div>
+  </div>
+
+</section>
