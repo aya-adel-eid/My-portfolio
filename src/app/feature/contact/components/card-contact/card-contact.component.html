@@ -1,4 +1,4 @@
-<div class="flex items-center mb-5 gap-5 py-6 px-6 rounded-2xl cursor-pointer
+<div class="flex items-center mb-5 gap-2.5 lg:gap-5 py-6 px-6 rounded-2xl cursor-pointer
          w-full transition-all duration-300 group
 
          bg-white border border-gray-200
@@ -22,11 +22,11 @@
   </div>
 
   <!-- Content -->
-  <div class="flex flex-col gap-1">
+  <div class="flex flex-col gap-1 ">
 
     @for (item of contact.content; track $index) {
     <h4 class="text-lg font-semibold leading-snug transition-colors duration-300
-
+               px-5
                text-gray-800 group-hover:text-main-600
                dark:text-white dark:group-hover:text-main-400">
       {{ item }}
