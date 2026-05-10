@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
+import { IProject } from '../../interfaces/IProject';
 
 @Component({
   selector: 'app-project-page',
@@ -86,6 +87,41 @@ export class ProjectPageComponent {
       image: '/images/Devolio.png',
     },
     {
+      name: 'Note Management Application',
+      description:
+        'A full-featured Notes Management SPA built with Angular, featuring NgRx state management, Angular Signals for reactive UI updates, and RESTful API integration with a fully responsive modern UI.',
+      techStack: [
+        {
+          name: 'Angular',
+          styles: 'bg-danger-soft border border-danger-subtle text-fg-danger-strong',
+        },
+        {
+          name: 'NgRx',
+          styles: 'bg-danger-soft border border-danger-subtle text-fg-danger-strong',
+        },
+        {
+          name: 'RxJS',
+          styles: 'bg-brand-softer border border-brand-subtle text-fg-brand-strong',
+        },
+        {
+          name: 'Angular Signals',
+          styles: 'bg-neutral-secondary-medium border border-default-medium text-heading',
+        },
+        {
+          name: 'Tailwind CSS',
+          styles: 'bg-brand-softer border border-brand-subtle text-fg-brand-strong',
+        },
+        {
+          name: 'REST API',
+          styles: 'bg-neutral-secondary-medium border border-default-medium text-heading',
+        },
+      ],
+      github: `https://github.com/aya-adel-eid/Note_APP`,
+      demo: `https://note-app-drab.vercel.app/`,
+      image: '/images/Note_App.png',
+    },
+
+    {
       name: 'Start FrameWork',
       description: `My first Angular app — a portfolio website implementing core Angular concepts: Routing, Data Binding,
       Reusable Components with @Input, Event & Property Binding, and a dynamic image viewer on the portfolio page.`,
@@ -124,6 +160,45 @@ export class ProjectPageComponent {
       demo: `https://app1-angular-seven.vercel.app/`,
       image: '/images/firstApp.png',
     },
+    {
+      name: 'Car Rental System',
+      description:
+        'A full-featured Car Rental platform built with Angular 21, featuring Admin and Customer modules, car management, order tracking, and user authentication with role-based access control.',
+      techStack: [
+        {
+          name: 'Angular 21',
+          styles: 'bg-danger-soft border border-danger-subtle text-fg-danger-strong',
+        },
+        {
+          name: 'TypeScript',
+          styles: 'bg-brand-softer border border-brand-subtle text-fg-brand-strong',
+        },
+        {
+          name: 'Tailwind CSS',
+          styles: 'bg-brand-softer border border-brand-subtle text-fg-brand-strong',
+        },
+        {
+          name: 'RxJS',
+          styles: 'bg-brand-softer border border-brand-subtle text-fg-brand-strong',
+        },
+        {
+          name: 'Flowbite',
+          styles: 'bg-neutral-secondary-medium border border-default-medium text-heading',
+        },
+        {
+          name: 'HTML',
+          styles: 'bg-danger-soft border border-danger-subtle text-fg-danger-strong',
+        },
+        {
+          name: 'Toaster',
+          styles: 'bg-neutral-secondary-medium border border-default-medium text-heading',
+        },
+      ],
+      github: 'https://github.com/aya-adel-eid/CarRental',
+      demo: 'https://car-rental-woad-two.vercel.app/',
+      image: '/images/CarRental.png',
+    },
+
     {
       name: 'Yummy App',
       description: `A meals discovery app that lets you browse dishes by Category, Ingredient, or Area. Click any meal to view full details,

@@ -1,28 +1,29 @@
-<section class="relative overflow-hidden pt-35 pb-24
+<section class="relative overflow-hidden pt-24 sm:pt-28 lg:pt-35 pb-16 sm:pb-20 lg:pb-24
                 bg-gray-100 dark:bg-[#1F262F]
                 transition-colors duration-500">
 
   <!-- Background decoration -->
   <div class="absolute inset-0 z-0 pointer-events-none">
-    <div class="absolute top-1/4 right-1/4 w-96 h-96
+    <div class="absolute top-1/4 right-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96
                 bg-main-600/10 dark:bg-main-600/5
                 rounded-full blur-3xl"></div>
 
-    <div class="absolute bottom-1/4 left-1/4 w-96 h-96
+    <div class="absolute bottom-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96
                 bg-main-600/10 dark:bg-main-600/5
                 rounded-full blur-3xl"></div>
   </div>
 
-  <div class="container mx-auto px-8 relative z-10">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
     <!-- Section Header -->
-    <div class="flex flex-col items-center gap-3 mb-16">
+    <div class="flex flex-col items-center gap-3 mb-10 sm:mb-14 lg:mb-16">
 
-      <h2 class="text-4xl font-bold text-center py-5 text-main-600" data-aos="fade-down" data-aos-delay="200">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center py-3 sm:py-5 text-main-600" data-aos="fade-down"
+        data-aos-delay="200">
         My Projects
       </h2>
       <div class="w-12 h-0.5 dark:bg-main-600/40 bg-main-300/40 rounded-full mt-1"></div>
-      <p class="text-lg dark:text-gray-100 text-gray-800 font-semibold text-center max-w-xl mt-2 leading-relaxed"
+      <p class="text-base sm:text-lg dark:text-gray-100 text-gray-800 font-semibold text-center max-w-xl mt-2 leading-relaxed px-2"
         data-aos="fade-down-left" data-aos-delay="500">
         A collection of projects I built throughout my learning journey —
         from simple JavaScript apps to full Angular applications with real-world features.
@@ -30,10 +31,9 @@
     </div>
 
     <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6 items-stretch">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 items-stretch">
       @for (project of projects_arr; track $index) {
-      <div data-aos="fade-up-right" [attr.data-aos-delay]="$index*700">
-
+      <div data-aos="fade-up-right" [attr.data-aos-delay]="$index * 200">
         <app-project-card [project]="project"></app-project-card>
       </div>
       }

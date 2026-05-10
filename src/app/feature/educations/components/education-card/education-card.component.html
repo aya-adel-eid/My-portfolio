@@ -1,0 +1,67 @@
+<!-- Card -->
+<div class="flex-1 bg-white dark:bg-white/5
+                      border border-gray-200 dark:border-white/10
+                      rounded-2xl p-4 sm:p-6
+                      hover:shadow-lg hover:shadow-main-500/10
+                      hover:border-main-500/40 dark:hover:border-main-600/40
+                      transition-all duration-300">
+
+  <!-- Top row: year + location -->
+  <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+    <span class="inline-block text-xs font-semibold
+                           text-main-600 dark:text-main-300
+                           bg-main-500/10 dark:bg-main-500/20
+                           px-3 py-1 rounded-full">
+      {{ edu()?.year }}
+    </span>
+    <span class="flex items-center gap-1.5 text-xs
+                           text-gray-500 dark:text-gray-400">
+      <i class="fa-solid fa-location-dot text-xs"></i>
+      {{edu()?.location }}
+    </span>
+  </div>
+
+  <!-- Degree -->
+  <h3 class="text-base sm:text-xl font-bold
+                       text-gray-900 dark:text-white mb-1">
+    {{ edu()?.degree }}
+  </h3>
+
+  <!-- Institution -->
+  <p class="text-sm sm:text-base font-medium
+                      text-main-600 dark:text-main-400
+                      flex items-center gap-2 mb-4">
+    <i class="fa-solid fa-building-columns text-xs sm:text-sm"></i>
+    {{ edu()?.institution }}
+  </p>
+
+  <!-- Divider -->
+  <hr class="border-gray-100 dark:border-white/10 mb-4">
+
+  <!-- Bullets -->
+  <ul class="space-y-2 mb-4">
+    @for (bullet of edu()?.bullets; track $index) {
+    <li class="flex items-start gap-2.5
+                           text-sm sm:text-base leading-relaxed
+                           text-gray-600 dark:text-gray-400">
+      <i class="fa-solid fa-circle-check
+                             text-main-500 text-xs mt-1.5 shrink-0"></i>
+      {{ bullet }}
+    </li>
+    }
+  </ul>
+
+  <!-- Tags -->
+  <div class="flex flex-wrap gap-2 pt-2
+                        border-t border-gray-100 dark:border-white/10">
+    @for (tag of edu()?.tags; track $index) {
+    <span class="text-xs font-medium px-3 py-1 rounded-full
+                             text-main-700 dark:text-main-300
+                             bg-main-500/10 dark:bg-main-500/20
+                             border border-main-500/20 dark:border-main-500/30">
+      {{ tag }}
+    </span>
+    }
+  </div>
+
+</div>

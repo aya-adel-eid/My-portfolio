@@ -19,7 +19,13 @@ export const routes: Routes = [
       import('./feature/about/about-page/about-page.component').then((m) => m.AboutPageComponent),
     title: 'about-page',
   },
-
+  {
+    path: 'educations',
+    loadComponent: () =>
+      import('./feature/educations/education-page/education-page.component').then(
+        (c) => c.EducationPageComponent,
+      ),
+  },
   {
     path: 'services',
     loadComponent: () =>
