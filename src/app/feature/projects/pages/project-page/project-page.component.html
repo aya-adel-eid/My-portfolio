@@ -31,7 +31,7 @@
     </div>
 
     <!-- Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 items-stretch">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 items-stretch px-6">
       @for (project of projects_arr; track $index) {
       <div data-aos="fade-up-right" [attr.data-aos-delay]="$index * 200">
         <app-project-card [project]="project"></app-project-card>

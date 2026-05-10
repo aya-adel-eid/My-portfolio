@@ -15,7 +15,7 @@
     </div>
 
     <!-- Grid -->
-    <div class="pt-6 sm:pt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+    <div class="pt-6 sm:pt-8 grid grid-cols-1 px-6 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
       @for (service of services_arr; track $index) {
       <div data-aos="flip-right" [attr.data-aos-delay]="$index * 150">
         <app-service-card [service]="service"></app-service-card>

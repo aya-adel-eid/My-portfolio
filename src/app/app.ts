@@ -16,18 +16,7 @@ import { ContactPagesComponent } from './feature/contact/pages/contact-pages/con
 import { ServicesPageComponent } from './feature/services/pages/services-page/services-page.component';
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    NavbarComponent,
-    FooterComponent,
-    HomeComponent,
-    AboutPageComponent,
-    EducationPageComponent,
-    SkillsPageComponent,
-    ProjectPageComponent,
-    ContactPagesComponent,
-    ServicesPageComponent,
-  ],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

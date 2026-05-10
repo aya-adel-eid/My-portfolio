@@ -5,7 +5,7 @@ import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-skills-page',
-  imports: [SkillCardComponent, ServiceCardComponent, RouterLink, RouterOutlet, RouterLinkActive],
+  imports: [RouterLink, RouterOutlet, RouterLinkActive],
   templateUrl: './skills-page.component.html',
   styleUrl: './skills-page.component.css',
 })
