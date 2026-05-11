@@ -1,35 +1,41 @@
-<nav
-  class="dark:bg-[#323946] bg-gray-200 shadow-xl rounded-full fixed w-[90%] mx-auto z-20 top-8 start-8 end-8 border border-main-300">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+<nav class="dark:bg-[#323946] bg-gray-200 shadow-xl rounded-full fixed
+            w-[90%] mx-auto z-20 top-4 sm:top-8 start-4 sm:start-8 end-4 sm:end-8
+            border border-main-300">
+  <div class="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-3 sm:p-4">
 
     <!-- Logo -->
     <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <span class="self-center text-3xl text-main-500 font-bold whitespace-nowrap">Portfolio</span>
+      <span class="self-center text-xl sm:text-2xl lg:text-3xl text-main-500 font-bold whitespace-nowrap">
+        Aya Adel
+      </span>
     </a>
 
-    <!-- Dark mode + Hamburger -->
-    <div class="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
-      <label class="inline-flex items-center cursor-pointer ps-4">
+    <!-- Dark mode  -->
+    <div class="flex lg:order-2 items-center space-x-2 lg:space-x-0 rtl:space-x-reverse">
+      <label class="inline-flex items-center cursor-pointer ps-2 sm:ps-4">
         <span class="select-none ms-3 text-sm font-medium hidden dark:inline pe-1.5">
-          <i class="fa-regular fa-sun fa-xl text-main-400"></i>
+          <i class="fa-regular fa-sun fa-lg sm:fa-xl text-main-400"></i>
         </span>
         <span class="select-none ms-3 text-sm font-medium dark:hidden pe-1.5">
-          <i class="fa-regular fa-moon fa-xl text-main-4"></i>
+          <i class="fa-regular fa-moon fa-lg sm:fa-xl text-main-500"></i>
         </span>
         <input type="checkbox" class="sr-only peer" checked (click)="toggleDark()">
       </label>
 
       <!-- Hamburger Button -->
-      <button type="button" (click)="toggleMenu()"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base lg:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary">
+      <button type="button" (click)="toggleMenu()" class="inline-flex items-center p-2 w-9 h-9 sm:w-10 sm:h-10 justify-center
+               text-sm rounded-lg lg:hidden
+               text-gray-500 dark:text-gray-300
+               hover:bg-gray-300 dark:hover:bg-gray-700
+               focus:outline-none focus:ring-2 focus:ring-main-300
+               transition-colors duration-200">
         <span class="sr-only">Open main menu</span>
-
         @if (isMenuOpen) {
-        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
           <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
         } @else {
-        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
           <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
         </svg>
         }
@@ -38,17 +44,21 @@
 
     <!-- Nav Links -->
     <div class="w-full lg:flex lg:w-auto lg:order-1
-                absolute lg:relative top-full left-0 right-0 mt-0.5 lg:mt-0" [class.hidden]="!isMenuOpen"
-      [class.block]="isMenuOpen" [class.lg:flex]="true">
-      <ul class="flex flex-col p-4 lg:p-0 mt-4 lg:mt-0 font-medium
-                 border border-default rounded-base
-                 bg-white lg:bg-transparent dark:lg:bg-transparent dark:bg-gray-800
-                 lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:border-0">
+                absolute lg:relative top-full left-0 right-0 mt-1 lg:mt-0
+                px-2 lg:px-0" [class.hidden]="!isMenuOpen" [class.block]="isMenuOpen" [class.lg:flex]="true">
+      <ul class="flex flex-col p-3 sm:p-4 lg:p-0 mt-2 lg:mt-0 font-medium
+                 border border-gray-200 dark:border-gray-700 rounded-2xl lg:rounded-none
+                 bg-white lg:bg-transparent
+                 dark:bg-gray-800 dark:lg:bg-transparent
+                 lg:space-x-4 xl:space-x-8 rtl:space-x-reverse
+                 lg:flex-row lg:border-0
+                 shadow-lg lg:shadow-none">
 
         @for (item of nav_arr; track $index) {
         <li>
-          <a [routerLink]="item.route" routerLinkActive="route-active" class="item-nav" (click)="closeMenu()">
-            <span class="mr-2"><i [class]="item.icon"></i></span>
+          <a [routerLink]="item.route" routerLinkActive="route-active" class="item-nav text-sm lg:text-base"
+            (click)="closeMenu()">
+            <span class="mr-1.5 sm:mr-2"><i [class]="item.icon"></i></span>
             {{ item.label }}
           </a>
         </li>
