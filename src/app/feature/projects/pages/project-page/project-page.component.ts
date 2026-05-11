@@ -84,7 +84,7 @@ export class ProjectPageComponent {
       ],
       github: `https://github.com/aya-adel-eid/Social-App`,
       demo: `https://social-app-navy-nu.vercel.app/`,
-      image: '/images/Devolio.png',
+      image: '/images/socialMediApp.png',
     },
     {
       name: 'Note Management Application',

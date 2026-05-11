@@ -6,7 +6,7 @@
             rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-main-500 lg:p-0;
   }
   .input-form {
-    @apply block py-3 px-0 w-full text-sm dark:text-gray-200 text-gray-700  bg-transparent border-0 border-b-2  border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-main-500  transition-colors duration-300;
+    @apply block py-3 px-0 w-full text-sm dark:text-gray-200 text-gray-700  dark:placeholder:text-white bg-transparent border-0 border-b-2  border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-main-500  transition-colors duration-300;
   }
   .label-form {
     @apply absolute text-sm dark:text-gray-200 text-gray-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left
