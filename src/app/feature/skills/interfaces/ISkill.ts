@@ -1,7 +1,4 @@
-export interface ISkill {
+interface Skill {
   name: string;
   icon: string;
-  description: string;
-  styles: string;
-  styling: string;
 }

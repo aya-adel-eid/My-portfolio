@@ -1,73 +1,62 @@
-<div class="flex flex-col h-full overflow-hidden rounded-2xl group
-         transition-all duration-300
-
-         bg-white border border-gray-200 shadow-md
-         hover:shadow-lg hover:border-main-500/40
-
-         dark:bg-white/5 dark:border-white/10
-         dark:hover:bg-white/10 dark:hover:border-main-600/50">
-
+<div
+  class="relative flex flex-col h-full overflow-hidden rounded-2xl group border border-gray-200 dark:border-white/10 bg-white dark:bg-[#252d38] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 hover:border-main-500/40 dark:hover:border-main-600/50"
+>
   <!-- Image -->
-  <div class="overflow-hidden">
-    <a href="#">
-      <img class="w-full h-48 sm:h-56 lg:h-60 object-cover
-               transition-transform duration-500
-               group-hover:scale-105" [src]="project.image" alt="Project thumbnail" />
-    </a>
+  <div class="relative h-44 sm:h-48 overflow-hidden">
+    <img
+      [src]="project.image"
+      alt="{{ project.name }}"
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+
+    <h5
+      [class]="featured ? 'text-lg sm:text-xl' : 'text-base sm:text-lg'"
+      class="absolute bottom-3 left-4 right-4 font-bold text-white leading-snug drop-shadow-md"
+    >
+      {{ project.name }}
+    </h5>
   </div>
 
   <!-- Content -->
-  <div class="p-4 sm:p-5 flex flex-col gap-3 sm:gap-4 flex-1">
-
-    <!-- Title -->
-    <a href="#" class="group/link">
-      <h5 class="text-base sm:text-lg font-semibold leading-snug transition-colors
-
-               text-main-600 group-hover/link:text-main-500
-               dark:text-main-400 dark:group-hover/link:text-main-300">
-        {{project.name}}
-      </h5>
-    </a>
-
+  <div class="p-4 sm:p-5 flex flex-col gap-3 flex-1">
     <!-- Description -->
-    <p class="text-sm leading-relaxed line-clamp-2 sm:line-clamp-3
-             text-gray-600 dark:text-gray-400">
-      {{project.description}}
+    <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-2">
+      {{ project.description }}
     </p>
 
     <!-- Tech Tags -->
-    <div class="flex flex-wrap gap-1.5 sm:gap-2 flex-1 content-start">
+    <div class="flex flex-wrap gap-1.5">
       @for (tech of project.techStack; track $index) {
-      <span class="text-xs font-medium px-2.5 sm:px-3 py-1 rounded-full h-fit
-                   transition-all duration-300" [class]="tech.styles">
-        {{tech.name}}
-      </span>
+        <span
+          class="text-[10px] sm:text-xs font-medium px-2.5 py-1 rounded-full"
+          [class]="tech.styles"
+        >
+          {{ tech.name }}
+        </span>
       }
     </div>
 
-    <!-- Divider -->
-    <div class="mt-auto border-t border-gray-200 dark:border-white/10"></div>
-
-    <!-- Links -->
-    <div class="flex items-center justify-between gap-2">
-
-      <a [href]="project.github" class="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm
-                text-gray-600 hover:text-main-600
-                dark:text-gray-400 dark:hover:text-white
-                transition-colors">
+    <!-- Links ظاهرين دايمًا -->
+    <div class="flex items-center gap-3 mt-auto pt-3 border-t border-gray-200 dark:border-white/10">
+      <a
+        [href]="project.github"
+        target="_blank"
+        class="flex items-center justify-center gap-1.5 flex-1 py-2 rounded-lg text-xs sm:text-sm font-medium bg-gray-100 dark:bg-white/5 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
+      >
         <i class="fa-brands fa-github"></i>
-        GitHub
+        Code
       </a>
 
-      <a [href]="project.demo" class="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium
-                text-main-600 hover:text-main-500
-                dark:text-main-400 dark:hover:text-main-300
-                transition-colors">
+      <a
+        [href]="project.demo"
+        target="_blank"
+        class="flex items-center justify-center gap-1.5 flex-1 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-main-600 text-white hover:bg-main-500 transition-colors"
+      >
         Live Demo
-        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
       </a>
-
     </div>
-
   </div>
 </div>

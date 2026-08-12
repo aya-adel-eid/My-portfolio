@@ -1,0 +1,77 @@
+<section
+  class="relative overflow-hidden pt-24 sm:pt-28 lg:pt-35 pb-16 sm:pb-20 lg:pb-24 bg-gray-100 dark:bg-[#1F262F] transition-colors duration-500"
+>
+  <!-- Background decoration -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-main-600/10 dark:bg-main-600/10 rounded-full blur-3xl"
+    ></div>
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px]"
+    ></div>
+  </div>
+
+  <div class="container mx-auto px-4 sm:px-6 relative z-10 max-w-7xl">
+    <!-- Section Header -->
+    <div class="flex flex-col items-center gap-4 mb-10 sm:mb-14 lg:mb-16">
+      <!-- Badge -->
+      <div
+        class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-main-600/10 dark:bg-main-600/10 border border-main-600/20"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
+        <span class="w-1.5 h-1.5 rounded-full bg-main-600 animate-pulse"></span>
+        <span
+          class="text-xs sm:text-sm font-semibold tracking-widest uppercase text-main-600 dark:text-main-400"
+        >
+          Portfolio
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h2
+        class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-gray-900 dark:text-white"
+        data-aos="fade-down"
+        data-aos-delay="200"
+      >
+        My
+        <span class="relative inline-block text-main-600">
+          Projects
+          <svg
+            class="absolute -bottom-1 sm:-bottom-2 left-0 w-full"
+            height="8"
+            viewBox="0 0 200 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 5.5C40 1.5 100 1.5 198 5.5"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              class="text-main-600/50"
+            />
+          </svg>
+        </span>
+      </h2>
+    </div>
+    <div class="text-main-600 font-bold flex justify-end pb-4">
+      <a routerLink="/projects" class="cursor-pointer"> View all projects </a>
+    </div>
+
+    <!-- Bento Grid -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-5 lg:gap-6 auto-rows-[280px] sm:auto-rows-[320px]"
+    >
+      @for (project of projectsService.projects_arr.slice(0, 5); track $index) {
+        <div
+          [class]="$index === 0 ? 'sm:col-span-2 lg:col-span-4 lg:row-span-1' : 'lg:col-span-2'"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="$index * 150"
+        >
+          <app-project-card [project]="project" [featured]="$index === 0"></app-project-card>
+        </div>
+      }
+    </div>
+  </div>
+</section>

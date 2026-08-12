@@ -1,38 +1,35 @@
-<div class="flex items-center mb-5 gap-2.5 lg:gap-5 py-6 px-6 rounded-2xl cursor-pointer
-         w-full transition-all duration-300 group
-
-         bg-white border border-gray-200
-         hover:bg-gray-50 hover:border-main-500/40
-
-         dark:bg-white/5 dark:border-white/10
-         dark:hover:bg-white/10 dark:hover:border-main-600/30">
-
+<div
+  class="flex items-center gap-3 sm:gap-4 py-4 sm:py-5 px-4 sm:px-5 rounded-xl sm:rounded-2xl cursor-pointer w-full transition-all duration-300 group bg-white border border-gray-200 hover:bg-gray-50 hover:border-main-500/40 hover:shadow-md dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10 dark:hover:border-main-600/30"
+>
   <!-- Icon -->
-  <div class="w-12 h-12 flex items-center justify-center rounded-xl shrink-0
-           transition-all duration-300
-
-           bg-main-600/10 border border-main-600/20
-           group-hover:bg-main-600/20
-
-           dark:bg-main-600/10 dark:border-main-600/20
-           dark:group-hover:bg-main-600/20">
-
-    <i class="fa-lg text-main-600 dark:text-main-400" [class]="contact.icon">
+  <div
+    class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg sm:rounded-xl shrink-0 transition-all duration-300 bg-main-600/10 border border-main-600/20 group-hover:bg-main-600 group-hover:scale-105 dark:bg-main-600/10 dark:border-main-600/20 dark:group-hover:bg-main-600"
+  >
+    <i
+      class="text-base sm:text-lg transition-colors duration-300 text-main-600 dark:text-main-400 group-hover:text-white"
+      [class]="contact.icon"
+    >
     </i>
   </div>
 
   <!-- Content -->
-  <div class="flex flex-col gap-1 ">
-
-    @for (item of contact.content; track $index) {
-    <h4 class="text-lg font-semibold leading-snug transition-colors duration-300
-               px-5
-               text-gray-800 group-hover:text-main-600
-               dark:text-white dark:group-hover:text-main-400">
-      {{ item }}
-    </h4>
+  <div class="flex flex-col gap-0.5 min-w-0">
+    @for (item of contact.content; track $index; let first = $first) {
+      <h4
+        [class]="
+          first
+            ? 'text-xs sm:text-sm text-gray-500 dark:text-gray-400'
+            : 'text-sm sm:text-base font-semibold text-gray-800 dark:text-white group-hover:text-main-600 dark:group-hover:text-main-400'
+        "
+        class="leading-snug transition-colors duration-300 truncate"
+      >
+        {{ item }}
+      </h4>
     }
-
   </div>
 
+  <!-- Arrow indicator -->
+  <i
+    class="fa-solid fa-chevron-right ml-auto text-xs shrink-0 text-gray-300 dark:text-gray-600 group-hover:text-main-600 dark:group-hover:text-main-400 group-hover:translate-x-1 transition-all duration-300"
+  ></i>
 </div>

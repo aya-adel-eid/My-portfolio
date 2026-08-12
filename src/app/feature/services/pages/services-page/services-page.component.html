@@ -1,27 +1,96 @@
-<section class="bg-gray-100 dark:bg-[#1F262F] min-h-screen pb-12 sm:pb-15 pt-24 sm:pt-28 lg:pt-32">
-  <div class="container mx-auto px-4 sm:px-6">
+<section
+  class="relative overflow-hidden pt-30 sm:pt-32 lg:pt-32 pb-14 sm:pb-20 bg-gray-100 dark:bg-[#1F262F] transition-colors duration-500"
+>
+  <!-- Decorative background blobs -->
+  <div class="absolute top-20 -left-20 w-72 h-72 bg-main-500/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 -right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
 
+  <div class="container mx-auto px-4 sm:px-6 relative z-10 max-w-7xl">
     <!-- Header -->
-    <div class="text-center px-2">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl text-main-500 dark:text-main-400
-                 py-3 leading-relaxed font-bold" data-aos="fade-right" data-aos-delay="100">
-        My Services
+    <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+      <span
+        class="inline-flex items-center gap-2 bg-main-500/10 text-main-600 dark:text-main-400 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
+        What I Offer
+      </span>
+
+      <h2
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold mt-4 text-gray-900 dark:text-white"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        My
+        <span class="bg-gradient-to-r from-main-500 to-blue-500 bg-clip-text text-transparent"
+          >Services</span
+        >
       </h2>
-      <p class="dark:text-white text-gray-800 text-base sm:text-lg lg:text-xl font-semibold
-                w-full sm:w-[85%] lg:w-[75%] mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="300">
-        Building scalable, performance-driven web applications with Angular.
-        Here are the key services I provide to help your business succeed.
+
+      <p
+        class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed mt-4"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        End-to-end Angular development services, from architecture to pixel-perfect UI.
       </p>
     </div>
 
-    <!-- Grid -->
-    <div class="pt-6 sm:pt-8 grid grid-cols-1 px-6 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mx-auto">
       @for (service of services_arr; track $index) {
-      <div data-aos="flip-right" [attr.data-aos-delay]="$index * 150">
-        <app-service-card [service]="service"></app-service-card>
-      </div>
+        <div
+          class="group relative flex flex-col h-full w-full bg-white dark:bg-[#2A313C] border border-gray-100 dark:border-white/10 rounded-3xl text-center py-8 sm:py-10 px-5 sm:px-6 cursor-pointer overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-main-500/20 hover:-translate-y-2 transition-all duration-300 ease-out"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="$index * 150"
+        >
+          <!-- Left accent bar -->
+          <span
+            class="absolute left-0 top-0 h-full w-0 group-hover:w-1.5 bg-gradient-to-b from-main-500 to-blue-500 transition-all duration-300 ease-out"
+          ></span>
+
+          <!-- Glow blob on hover -->
+          <div
+            class="absolute -top-10 -right-10 w-32 h-32 bg-main-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out"
+          ></div>
+
+          <!-- Icon with number badge -->
+          <div class="relative z-10 mx-auto">
+            <span
+              class="inline-flex justify-center items-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-main-500/10 border border-main-500/20 group-hover:bg-main-500 group-hover:-rotate-6 group-hover:scale-110 transition-all duration-300 ease-out"
+            >
+              <i
+                [class]="service.icon"
+                class="text-main-500 text-xl sm:text-2xl group-hover:text-white transition-colors duration-300 ease-out"
+              ></i>
+            </span>
+
+            <!-- Number badge -->
+            <span
+              class="absolute -top-2 -right-2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white dark:bg-[#1F262F] border-2 border-main-500 flex items-center justify-center text-[10px] sm:text-xs font-bold text-main-500 group-hover:bg-main-500 group-hover:text-white transition-all duration-300 ease-out"
+            >
+              {{ $index + 1 }}
+            </span>
+          </div>
+
+          <!-- Title -->
+          <h2
+            class="relative z-10 text-lg sm:text-xl text-gray-900 dark:text-white pt-5 sm:pt-6 pb-3 font-bold min-h-fit sm:h-16"
+          >
+            {{ service.title }}
+          </h2>
+
+          <!-- Divider -->
+          <span class="relative z-10 w-10 h-0.5 bg-main-500/30 rounded-full mx-auto mb-4"></span>
+
+          <!-- Description -->
+          <p
+            class="relative z-10 text-sm sm:text-base grow leading-relaxed text-gray-500 dark:text-gray-400"
+          >
+            {{ service.description }}
+          </p>
+        </div>
       }
     </div>
-
   </div>
 </section>

@@ -1,72 +1,90 @@
-<section class="relative overflow-hidden min-h-screen flex items-center pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-20
-         bg-gray-100 dark:bg-[#1F262F]
-         transition-colors duration-500">
-
+<section
+  class="relative overflow-hidden min-h-screen flex items-center pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-20 bg-gray-100 dark:bg-[#1F262F] transition-colors duration-500"
+>
   <!-- Background blur effect -->
-  <div class="absolute top-20 left-5 sm:left-20 w-48 h-48 sm:w-72 sm:h-72
-              bg-main-600/20 dark:bg-main-600/30
-              rounded-full blur-3xl">
-  </div>
+  <div
+    class="absolute top-20 left-5 sm:left-20 w-48 h-48 sm:w-72 sm:h-72 bg-main-600/20 dark:bg-main-600/30 rounded-full blur-3xl"
+  ></div>
 
-  <div class="absolute bottom-20 right-5 sm:right-20 w-64 h-64 sm:w-96 sm:h-96
-              bg-purple-500/20 dark:bg-purple-600/20
-              rounded-full blur-3xl">
-  </div>
+  <div
+    class="absolute bottom-20 right-5 sm:right-20 w-64 h-64 sm:w-96 sm:h-96 bg-purple-500/20 dark:bg-purple-600/20 rounded-full blur-3xl"
+  ></div>
 
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <div class="container mx-auto px-4 sm:px-6 relative z-10 max-w-7xl">
+    <!-- Header -->
+    <div class="text-center mb-10 sm:mb-14">
+      <span
+        class="inline-flex items-center gap-2 bg-main-500/10 text-main-600 dark:text-main-400 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
+        What I Work With
+      </span>
 
-    <!-- Title -->
-    <h2 class="text-3xl sm:text-4xl font-bold text-center py-5 sm:py-8 mb-10 sm:mb-16
-               text-gray-900 dark:text-white" data-aos="flip-down" data-aos-delay="300">
-      Technical
-      <span class="text-main-600 dark:text-main-400">Skills</span>
-    </h2>
+      <h2
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold mt-4 text-gray-900 dark:text-white"
+        data-aos="flip-down"
+        data-aos-delay="300"
+      >
+        Technical
+        <span class="bg-gradient-to-r from-main-500 to-purple-500 bg-clip-text text-transparent"
+          >Skills</span
+        >
+      </h2>
+    </div>
 
     <!-- Tabs -->
-    <div class="flex justify-center py-5 sm:py-8">
-      <ul class="flex flex-wrap justify-center gap-2 sm:gap-3 text-sm sm:text-lg font-medium text-center
-                 text-gray-700 dark:text-gray-300">
-
-        <li>
-          <a routerLink="lang" routerLinkActive="router-link" class="inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-xl
-                    transition-all duration-300
-                    hover:bg-main-600/10 dark:hover:bg-white/10">
-            Languages
-          </a>
-        </li>
-
-        <li>
-          <a routerLink="tools" routerLinkActive="router-link" class="inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-xl
-                    transition-all duration-300
-                    hover:bg-main-600/10 dark:hover:bg-white/10">
-            Tools & Platform
-          </a>
-        </li>
-
-        <li>
-          <a routerLink="library" routerLinkActive="router-link" class="inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-xl
-                    transition-all duration-300
-                    hover:bg-main-600/10 dark:hover:bg-white/10">
-            Frameworks & Libraries
-          </a>
-        </li>
-
-        <li>
-          <a routerLink="markUp" routerLinkActive="router-link" class="inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-xl
-                    transition-all duration-300
-                    hover:bg-main-600/10 dark:hover:bg-white/10">
-            Markup & Styling
-          </a>
-        </li>
-
+    <div class="flex justify-center px-2">
+      <ul
+        class="flex flex-wrap justify-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur-sm border border-gray-200/60 dark:border-white/10 shadow-sm text-xs sm:text-sm font-semibold"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        @for (tab of tabs; track tab.key) {
+          <li>
+            <button
+              type="button"
+              (click)="setTab(tab.key)"
+              class="flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl transition-all duration-300 ease-out cursor-pointer"
+              [class.bg-main-500]="activeTab() === tab.key"
+              [class.text-white]="activeTab() === tab.key"
+              [class.shadow-md]="activeTab() === tab.key"
+              [class.shadow-main-500/30]="activeTab() === tab.key"
+              [class.text-gray-600]="activeTab() !== tab.key"
+              [class.dark:text-gray-300]="activeTab() !== tab.key"
+            >
+              <i [class]="tab.icon" class="text-xs sm:text-sm"></i>
+              <span>{{ tab.label }}</span>
+            </button>
+          </li>
+        }
       </ul>
     </div>
 
-    <!-- Content -->
-    <div class="py-5 sm:py-8">
-      <router-outlet></router-outlet>
+    <!-- Skills Content -->
+    <div class="py-8 sm:py-10">
+      <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 gap-4 sm:gap-5">
+        @for (skill of skillsData[activeTab()]; track skill.name) {
+          <div
+            class="group flex flex-col items-center justify-center gap-3 p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#2A313C] border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-xl hover:shadow-main-500/20 hover:-translate-y-1.5 transition-all duration-300 ease-out"
+            data-aos="zoom-in"
+          >
+            <div
+              class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center bg-main-500/10 group-hover:bg-main-500 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300 ease-out"
+            >
+              <i
+                [class]="skill.icon"
+                class="text-xl sm:text-2xl text-main-500 group-hover:text-white transition-colors duration-300 ease-out"
+              ></i>
+            </div>
+            <span
+              class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 text-center"
+            >
+              {{ skill.name }}
+            </span>
+          </div>
+        }
+      </div>
     </div>
-
   </div>
-
 </section>

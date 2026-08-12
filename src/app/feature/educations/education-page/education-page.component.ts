@@ -11,6 +11,19 @@ import { EducationCardComponent } from '../components/education-card/education-c
 export class EducationPageComponent {
   education_arr: Education[] = [
     {
+      year: 'Feb 2026 – Apr 2026',
+      degree: 'Frontend Development Mentorship',
+      institution: 'Refeeq',
+      location: 'Remote',
+      icon: 'fa-solid fa-people-arrows',
+      bullets: [
+        'Received one-on-one guidance on advanced Angular patterns, code architecture, and industry best practices.',
+        'Worked on real-world project simulations with code reviews and performance feedback.',
+        'Strengthened problem-solving and system design skills through structured mentorship sessions.',
+      ],
+      tags: ['Angular', 'Code Review', 'Best Practices', 'System Design'],
+    },
+    {
       year: 'Jun 2025 – Jan 2026',
       degree: 'Front-End Diploma (Angular)',
       institution: 'Route Academy Egypt',

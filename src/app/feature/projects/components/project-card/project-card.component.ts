@@ -9,4 +9,5 @@ import { IProject } from '../../interfaces/IProject';
 })
 export class ProjectCardComponent {
   @Input() project!: IProject;
+  @Input() featured: boolean = false;
 }

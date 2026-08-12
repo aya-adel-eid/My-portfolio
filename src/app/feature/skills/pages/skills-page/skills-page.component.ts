@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { SkillCardComponent } from '../../components/skill-card/skill-card.component';
-import { ServiceCardComponent } from '../../../services/components/service-card/service-card.component';
+import { Component, signal } from '@angular/core';
+
 import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -10,6 +9,46 @@ import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
   styleUrl: './skills-page.component.css',
 })
 export class SkillsPageComponent {
+  tabs = [
+    { key: 'lang', label: 'Languages', icon: 'fa-solid fa-code' },
+    { key: 'tools', label: 'Tools & Platform', icon: 'fa-solid fa-toolbox' },
+    { key: 'library', label: 'Frameworks & Libraries', icon: 'fa-solid fa-layer-group' },
+    { key: 'markUp', label: 'Markup & Styling', icon: 'fa-solid fa-palette' },
+  ];
+
+  activeTab = signal('lang');
+
+  skillsData: Record<string, Skill[]> = {
+    lang: [
+      { name: 'JavaScript', icon: 'fa-brands fa-js' },
+      { name: 'TypeScript', icon: 'fa-solid fa-code' },
+      { name: 'C++', icon: 'fa-solid fa-code' },
+      { name: 'HTML5', icon: 'fa-brands fa-html5' },
+      { name: 'CSS3', icon: 'fa-brands fa-css3-alt' },
+    ],
+    tools: [
+      { name: 'Git', icon: 'fa-brands fa-git-alt' },
+      { name: 'GitHub', icon: 'fa-brands fa-github' },
+      { name: 'VS Code', icon: 'fa-solid fa-laptop-code' },
+      { name: 'Figma', icon: 'fa-brands fa-figma' },
+      { name: 'Postman', icon: 'fa-solid fa-paper-plane' },
+    ],
+    library: [
+      { name: 'Angular', icon: 'fa-brands fa-angular' },
+      { name: 'RxJS', icon: 'fa-solid fa-diagram-project' },
+      { name: 'NgRx', icon: 'fa-solid fa-cubes' },
+      { name: 'Bootstrap', icon: 'fa-brands fa-bootstrap' },
+    ],
+    markUp: [
+      { name: 'Tailwind CSS', icon: 'fa-solid fa-wind' },
+      { name: 'SCSS', icon: 'fa-brands fa-sass' },
+      { name: 'Responsive Design', icon: 'fa-solid fa-mobile-screen' },
+    ],
+  };
+
+  setTab(key: string) {
+    this.activeTab.set(key);
+  }
   // tools_Arr = [
   //   {
   //     name: 'Git',

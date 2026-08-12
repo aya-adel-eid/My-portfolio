@@ -9,15 +9,13 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   private readonly darkServices = inject(DarkService);
   private readonly platId = inject(PLATFORM_ID);
   isMenuOpen: boolean = false;
-  ngOnInit(): void {
-    if (isPlatformBrowser(this.platId)) {
-      this.darkServices.SaveFinal();
-    }
-  }
+  // ngOnInit(): void {
+  //   this.darkServices.SaveFinal();
+  // }
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }

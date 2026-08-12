@@ -1,71 +1,100 @@
-<nav class="dark:bg-[#323946] bg-gray-200 shadow-xl rounded-full fixed
-            w-[90%] mx-auto z-20 top-4 sm:top-8 start-4 sm:start-8 end-4 sm:end-8
-            border border-main-300">
-  <div class="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-3 sm:p-4">
-
+<nav
+  class="dark:bg-[#323946]/90 bg-white/90 backdrop-blur-xl shadow-md fixed top-0 left-0 right-0 w-full z-20 border-b border-main-300/40 dark:border-main-400/20 transition-all duration-300"
+>
+  <div
+    class="max-w-7xl flex flex-wrap items-center justify-between mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4"
+  >
     <!-- Logo -->
-    <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <span class="self-center text-xl sm:text-2xl lg:text-3xl text-main-500 font-bold whitespace-nowrap">
+    <a routerLink="/" class="flex items-center gap-2 sm:gap-2.5 group">
+      <div
+        class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-main-500 to-blue-500 flex items-center justify-center text-white font-bold text-sm sm:text-base shadow-md shadow-main-500/40 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105"
+      >
+        AA
+      </div>
+      <span
+        class="self-center text-lg sm:text-xl lg:text-2xl font-bold whitespace-nowrap bg-gradient-to-r from-main-600 to-blue-500 bg-clip-text text-transparent"
+      >
         Aya Adel
       </span>
     </a>
 
-    <!-- Dark mode  -->
-    <div class="flex lg:order-2 items-center space-x-2 lg:space-x-0 rtl:space-x-reverse">
-      <label class="inline-flex items-center cursor-pointer ps-2 sm:ps-4">
-        <span class="select-none ms-3 text-sm font-medium hidden dark:inline pe-1.5">
-          <i class="fa-regular fa-sun fa-lg sm:fa-xl text-main-400"></i>
+    <!-- Dark mode + Hamburger -->
+    <div class="flex lg:order-2 items-center gap-1.5 sm:gap-2 rtl:space-x-reverse">
+      <label
+        class="inline-flex items-center cursor-pointer w-9 h-9 sm:w-10 sm:h-10 justify-center rounded-full hover:bg-gray-200/70 dark:hover:bg-gray-700/50 transition-colors duration-200"
+      >
+        <span class="select-none hidden dark:inline">
+          <i class="fa-regular fa-sun fa-lg text-main-400"></i>
         </span>
-        <span class="select-none ms-3 text-sm font-medium dark:hidden pe-1.5">
-          <i class="fa-regular fa-moon fa-lg sm:fa-xl text-main-500"></i>
+        <span class="select-none dark:hidden">
+          <i class="fa-regular fa-moon fa-lg text-main-500"></i>
         </span>
-        <input type="checkbox" class="sr-only peer" checked (click)="toggleDark()">
+        <input type="checkbox" class="sr-only peer" checked (click)="toggleDark()" />
       </label>
 
       <!-- Hamburger Button -->
-      <button type="button" (click)="toggleMenu()" class="inline-flex items-center p-2 w-9 h-9 sm:w-10 sm:h-10 justify-center
-               text-sm rounded-lg lg:hidden
-               text-gray-500 dark:text-gray-300
-               hover:bg-gray-300 dark:hover:bg-gray-700
-               focus:outline-none focus:ring-2 focus:ring-main-300
-               transition-colors duration-200">
+      <button
+        type="button"
+        (click)="toggleMenu()"
+        class="inline-flex items-center p-2 w-9 h-9 sm:w-10 sm:h-10 justify-center text-sm rounded-lg lg:hidden text-gray-600 dark:text-gray-300 hover:bg-gray-200/70 dark:hover:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-main-300 transition-all duration-200"
+      >
         <span class="sr-only">Open main menu</span>
         @if (isMenuOpen) {
-        <svg class="w-5 h-5 sm:w-6 sm:h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+          <svg
+            class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
         } @else {
-        <svg class="w-5 h-5 sm:w-6 sm:h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
-        </svg>
+          <svg
+            class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+              d="M5 7h14M5 12h14M5 17h14"
+            />
+          </svg>
         }
       </button>
     </div>
 
     <!-- Nav Links -->
-    <div class="w-full lg:flex lg:w-auto lg:order-1
-                absolute lg:relative top-full left-0 right-0 mt-1 lg:mt-0
-                px-2 lg:px-0" [class.hidden]="!isMenuOpen" [class.block]="isMenuOpen" [class.lg:flex]="true">
-      <ul class="flex flex-col p-3 sm:p-4 lg:p-0 mt-2 lg:mt-0 font-medium
-                 border border-gray-200 dark:border-gray-700 rounded-2xl lg:rounded-none
-                 bg-white lg:bg-transparent
-                 dark:bg-gray-800 dark:lg:bg-transparent
-                 lg:space-x-4 xl:space-x-8 rtl:space-x-reverse
-                 lg:flex-row lg:border-0
-                 shadow-lg lg:shadow-none">
-
+    <div
+      class="w-full lg:flex lg:w-auto lg:order-1 absolute lg:relative top-full left-0 right-0 lg:mt-0 px-2 lg:px-0"
+      [class.hidden]="!isMenuOpen"
+      [class.block]="isMenuOpen"
+      [class.lg:flex]="true"
+    >
+      <ul
+        class="flex flex-col p-3 sm:p-4 lg:p-0 mt-0 lg:mt-0 font-medium gap-1 lg:gap-1 border-b border-x lg:border-0 border-gray-200/60 dark:border-gray-700/60 bg-white lg:bg-transparent dark:bg-[#323946] dark:lg:bg-transparent lg:flex-row shadow-lg lg:shadow-none"
+      >
         @for (item of nav_arr; track $index) {
-        <li>
-          <a [routerLink]="item.route" routerLinkActive="route-active" class="item-nav text-sm lg:text-base"
-            (click)="closeMenu()">
-            <span class="mr-1.5 sm:mr-2"><i [class]="item.icon"></i></span>
-            {{ item.label }}
-          </a>
-        </li>
+          <li>
+            <a
+              [routerLink]="item.route"
+              routerLinkActive="!text-main-500 !border-main-500"
+              class="flex items-center gap-2 px-4 py-2.5 lg:px-3 lg:py-2 text-sm lg:text-[15px] text-gray-600 dark:text-gray-300 font-medium border-b-2 border-transparent hover:text-main-500 hover:border-main-500/50 transition-all duration-200"
+              (click)="closeMenu()"
+            >
+              <i [class]="item.icon" class="text-xs sm:text-sm"></i>
+              <span>{{ item.label }}</span>
+            </a>
+          </li>
         }
-
       </ul>
     </div>
-
   </div>
 </nav>

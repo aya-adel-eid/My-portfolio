@@ -42,48 +42,6 @@ export const routes: Routes = [
         (m) => m.SkillsPageComponent,
       ),
     title: 'skills-page',
-
-    children: [
-      {
-        path: '',
-        redirectTo: 'lang',
-        pathMatch: 'full',
-      },
-
-      {
-        path: 'lang',
-        loadComponent: () =>
-          import('./feature/skills/components/language/language.component').then(
-            (m) => m.LanguageComponent,
-          ),
-        title: 'Languages&FrontEnd',
-      },
-
-      {
-        path: 'tools',
-        loadComponent: () =>
-          import('./feature/skills/components/tools/tools.component').then((m) => m.ToolsComponent),
-        title: 'Tools&&platform',
-      },
-
-      {
-        path: 'library',
-        loadComponent: () =>
-          import('./feature/skills/components/library/library.component').then(
-            (m) => m.LibraryComponent,
-          ),
-        title: 'Libraries',
-      },
-
-      {
-        path: 'markUp',
-        loadComponent: () =>
-          import('./feature/skills/components/mark-up/mark-up.component').then(
-            (m) => m.MarkUpComponent,
-          ),
-        title: 'markUp&&Styling',
-      },
-    ],
   },
 
   {

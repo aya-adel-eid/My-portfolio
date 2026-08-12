@@ -1,33 +1,156 @@
-<section class="min-h-screen sm:py-20 py-16 lg:pt-16 flex items-center overflow-hidden
-                bg-gray-100 dark:bg-[#1F262F] transition-colors duration-500">
+<section
+  class="min-h-screen pt-30 sm:pt-32 lg:pt-32 pb-14 sm:pb-20 flex items-center overflow-hidden relative bg-gray-100 dark:bg-[#1F262F] transition-colors duration-500"
+>
+  <!-- Decorative background blobs -->
+  <div class="absolute top-20 -right-20 w-72 h-72 bg-main-500/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-10 -left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
 
-  <div class="container mx-auto px-4 sm:px-6">
-    <div class="text-center">
-
-      <h2 class="text-2xl sm:text-3xl font-bold uppercase leading-relaxed
-                 text-main-600 dark:text-main-400" data-aos="fade-right" data-aos-delay="200">
+  <div class="container mx-auto px-4 sm:px-6 relative z-10 max-w-7xl">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto">
+      <span
+        class="inline-flex items-center gap-2 bg-main-500/10 text-main-600 dark:text-main-400 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide"
+        data-aos="fade-right"
+        data-aos-delay="200"
+      >
         About Me
-      </h2>
+      </span>
 
-      <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-relaxed mt-2
-                 text-gray-900 dark:text-white" data-aos="fade-right-up" data-aos-delay="600">
+      <h3
+        class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-relaxed mt-4 text-gray-900 dark:text-white"
+        data-aos="fade-right-up"
+        data-aos-delay="600"
+      >
         Who is
-        <span class="text-main-600 dark:text-main-400">Aya Adel</span> ?
+        <span class="bg-gradient-to-r from-main-500 to-blue-500 bg-clip-text text-transparent"
+          >Aya Adel</span
+        >
+        ?
       </h3>
 
-      <p class="text-base sm:text-lg lg:text-xl
-                w-full sm:w-[90%] lg:w-[75%] mx-auto
-                leading-relaxed mt-4 px-2
-                text-gray-700 dark:text-gray-300" data-aos="fade-down-left" data-aos-delay="1100">
-        I'm Frontend Developer (Angular) with extensive experience in building
-        responsive single-page applications (SPA) using HTML, CSS, JavaScript,
-        NgRx, and TypeScript. Proficient in Angular architecture including routing,
-        guards, services, and reusable components. Strong problem-solving skills
-        with object-oriented programming experience in C++. Passionate about
-        clean code, performance optimization, and continuous learning.
+      <p
+        class="text-sm sm:text-base lg:text-lg w-full sm:w-[90%] lg:w-[80%] mx-auto leading-relaxed mt-4 px-2 text-gray-600 dark:text-gray-300"
+        data-aos="fade-down-left"
+        data-aos-delay="1100"
+      >
+        I'm a Frontend Developer (Angular) with extensive experience in building responsive
+        single-page applications (SPA) using HTML, CSS, JavaScript, NgRx, and TypeScript. Proficient
+        in Angular architecture including routing, guards, services, and reusable components.
+        Passionate about clean code, performance optimization, and continuous learning.
       </p>
+    </div>
 
+    <!-- Highlight Cards -->
+    <div
+      class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10 sm:mt-14 mx-auto"
+    >
+      <div
+        class="group relative bg-white dark:bg-[#2A313C] rounded-2xl p-5 sm:p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl hover:shadow-main-500/30 hover:-translate-y-2 hover:scale-[1.03] transition-all duration-300 ease-out cursor-default overflow-hidden"
+        data-aos="fade-up"
+        data-aos-delay="1300"
+      >
+        <div
+          class="w-12 h-12 rounded-xl bg-main-500/10 flex items-center justify-center mb-4 group-hover:bg-main-500 group-hover:-rotate-6 group-hover:scale-110 transition-all duration-300 ease-out"
+        >
+          <i
+            class="fa-brands fa-angular text-main-500 group-hover:text-white text-xl transition-colors duration-300 ease-out"
+          ></i>
+        </div>
+        <h4
+          class="relative inline-block font-bold text-gray-900 dark:text-white text-base sm:text-lg mb-1.5"
+        >
+          Angular Expertise
+          <span
+            class="absolute -bottom-0.5 left-0 h-0.5 w-0 group-hover:w-full bg-main-500 transition-all duration-300 ease-out"
+          ></span>
+        </h4>
+        <p
+          class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed group-hover:translate-x-0.5 transition-transform duration-300 ease-out"
+        >
+          Solid grasp of Angular architecture, routing, guards, and reusable components.
+        </p>
+      </div>
+
+      <div
+        class="group relative bg-white dark:bg-[#2A313C] rounded-2xl p-5 sm:p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-[1.03] transition-all duration-300 ease-out cursor-default overflow-hidden"
+        data-aos="fade-up"
+        data-aos-delay="1500"
+      >
+        <div
+          class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4 group-hover:bg-blue-500 group-hover:-rotate-6 group-hover:scale-110 transition-all duration-300 ease-out"
+        >
+          <i
+            class="fa-solid fa-puzzle-piece text-blue-500 group-hover:text-white text-xl transition-colors duration-300 ease-out"
+          ></i>
+        </div>
+        <h4
+          class="relative inline-block font-bold text-gray-900 dark:text-white text-base sm:text-lg mb-1.5"
+        >
+          Problem Solving
+          <span
+            class="absolute -bottom-0.5 left-0 h-0.5 w-0 group-hover:w-full bg-blue-500 transition-all duration-300 ease-out"
+          ></span>
+        </h4>
+        <p
+          class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed group-hover:translate-x-0.5 transition-transform duration-300 ease-out"
+        >
+          Strong analytical thinking backed by object-oriented programming experience in C++.
+        </p>
+      </div>
+
+      <div
+        class="group relative bg-white dark:bg-[#2A313C] rounded-2xl p-5 sm:p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl hover:shadow-green-500/30 hover:-translate-y-2 hover:scale-[1.03] transition-all duration-300 ease-out cursor-default overflow-hidden"
+        data-aos="fade-up"
+        data-aos-delay="1700"
+      >
+        <div
+          class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-4 group-hover:bg-green-500 group-hover:-rotate-6 group-hover:scale-110 transition-all duration-300 ease-out"
+        >
+          <i
+            class="fa-solid fa-code text-green-500 group-hover:text-white text-xl transition-colors duration-300 ease-out"
+          ></i>
+        </div>
+        <h4
+          class="relative inline-block font-bold text-gray-900 dark:text-white text-base sm:text-lg mb-1.5"
+        >
+          Clean Code
+          <span
+            class="absolute -bottom-0.5 left-0 h-0.5 w-0 group-hover:w-full bg-green-500 transition-all duration-300 ease-out"
+          ></span>
+        </h4>
+        <p
+          class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed group-hover:translate-x-0.5 transition-transform duration-300 ease-out"
+        >
+          Writing readable, maintainable, and performance-optimized code by default.
+        </p>
+      </div>
+
+      <div
+        class="group relative bg-white dark:bg-[#2A313C] rounded-2xl p-5 sm:p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl hover:shadow-purple-500/30 hover:-translate-y-2 hover:scale-[1.03] transition-all duration-300 ease-out cursor-default overflow-hidden"
+        data-aos="fade-up"
+        data-aos-delay="1900"
+      >
+        <div
+          class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4 group-hover:bg-purple-500 group-hover:-rotate-6 group-hover:scale-110 transition-all duration-300 ease-out"
+        >
+          <i
+            class="fa-solid fa-arrow-trend-up text-purple-500 group-hover:text-white text-xl transition-colors duration-300 ease-out"
+          ></i>
+        </div>
+        <h4
+          class="relative inline-block font-bold text-gray-900 dark:text-white text-base sm:text-lg mb-1.5"
+        >
+          Continuous Learning
+          <span
+            class="absolute -bottom-0.5 left-0 h-0.5 w-0 group-hover:w-full bg-purple-500 transition-all duration-300 ease-out"
+          ></span>
+        </h4>
+        <p
+          class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed group-hover:translate-x-0.5 transition-transform duration-300 ease-out"
+        >
+          Always exploring new tools and best practices to grow as a developer.
+        </p>
+      </div>
     </div>
   </div>
-
 </section>

@@ -1,9 +1,10 @@
 export interface Education {
   year: string;
+  location: string;
   degree: string;
   institution: string;
-  location: string;
   icon: string;
   bullets: string[];
   tags: string[];
+  current?: boolean; // ← أضيفي دي
 }

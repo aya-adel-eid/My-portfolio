@@ -14,6 +14,7 @@ import { SkillsPageComponent } from './feature/skills/pages/skills-page/skills-p
 import { ProjectPageComponent } from './feature/projects/pages/project-page/project-page.component';
 import { ContactPagesComponent } from './feature/contact/pages/contact-pages/contact-pages.component';
 import { ServicesPageComponent } from './feature/services/pages/services-page/services-page.component';
+import { DarkService } from './core/services/dark.service';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, NavbarComponent, FooterComponent],
@@ -24,6 +25,10 @@ export class App {
   protected readonly title = signal('portfolio');
   private readonly platformId = inject(PLATFORM_ID);
   private readonly router = inject(Router);
+  darkServices = inject(DarkService);
+  constructor() {
+    this.darkServices.SaveFinal();
+  }
   ngOnInit(): void {
     initFlowbite();
     if (isPlatformBrowser(this.platformId)) {
